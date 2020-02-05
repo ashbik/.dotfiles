@@ -23,6 +23,12 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+
+" git 
+inoremap git<Enter><Enter> <Esc>:w<Enter> <Esc>:!clear;/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add %<Enter><Enter><Esc>:!/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m "Auto updated using vim (see .vim for details.)" <Enter><Enter><Esc>:!/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME push -u origin master<Enter> 
+
+
+
 "autosave
 autocmd TextChanged, TextChangedI <buffer> silent write
 
@@ -31,7 +37,7 @@ autocmd TextChanged, TextChangedI <buffer> silent write
 inoremap <Space><Space><Tab> <Esc>/<++><Enter>"_c4l
 
 " Run python code on terminal
-autocmd FileType python inoremap r<Enter><Enter> <Esc>:!clear;python %<Enter>
+autocmd FileType python inoremap r<Enter><Enter> <Esc>:!clear;python % <Enter> <Enter> <Esc>:!clear;pfetch<Enter>
 
 "Comment python code
 autocmd FileType python inoremap ## <Esc>0i#<Esc>j 
