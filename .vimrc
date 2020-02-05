@@ -25,7 +25,7 @@ set expandtab
 
 
 " git 
-inoremap git<Enter><Enter> <Esc>:w<Enter> <Esc>:!clear;/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add %<Enter><Enter><Esc>:!/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m "Auto updated using vim (see .vim for details.)" <Enter><Enter><Esc>:!/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME push -u origin master<Enter> 
+inoremap g<Enter><Enter> <Esc>:w<Enter> <Esc>:!clear;/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add %<Enter><Enter><Esc>:!/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m "Auto updated using vim (see .vimrc for details.)" <Enter><Enter><Esc>:!/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME push -u origin master<Enter> 
 
 
 
