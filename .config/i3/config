@@ -67,8 +67,6 @@ bindsym $mod+f exec st -e ranger
 bindsym $mod+Shift+f exec thunar
 
 
-bindsym $mod+i exec $HOME/Cloud/Code/Scripts/capp.sh  
-
 bindsym $mod+m exec st -e ncmpcpp
 bindsym $mod+Ctrl+m exec pavucontrol
 
@@ -84,7 +82,7 @@ bindsym $mod+s exec chromium --app=https://messenger.com
 bindsym $mod+v exec virtualbox
 
 
-bindsym $mod+p exec $HOME/Cloud/Code/Scripts/emoji.sh
+bindsym $mod+p exec $HOME/.config/emoji/emoji.sh
 #########################################################################################################################                 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
