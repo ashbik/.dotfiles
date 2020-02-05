@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='lsd'
-alias pm='sudo pacman'
+alias pms='sudo pacman -S r'
 PS1='[\u@\h \W]\$ '
 
 pfetch
