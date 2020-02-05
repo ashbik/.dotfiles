@@ -37,7 +37,7 @@ autocmd TextChanged, TextChangedI <buffer> silent write
 inoremap <Space><Space><Tab> <Esc>/<++><Enter>"_c4l
 
 " Run python code on terminal
-autocmd FileType python inoremap r<Enter><Enter> <Esc>:w<Enter><Esc>:!clear;python %<Enter>
+autocmd FileType python inoremap r<Enter><Enter> <Space><Space><Tab><Esc>:w<Enter><Esc>:!clear;python %<Enter>
 
 "Comment python code
 autocmd FileType python inoremap ## <Esc>0i#<Esc>j 
