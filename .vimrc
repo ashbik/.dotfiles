@@ -37,7 +37,7 @@ autocmd TextChanged, TextChangedI <buffer> silent write
 inoremap <Space><Space><Tab> <Esc>/<++><Enter>"_c4l
 
 " Run python code on terminal
-autocmd FileType python inoremap r<Enter><Enter> <Esc>:%s/<++>//g<Enter><Esc>:w<Enter><Esc>:!clear;python %<Enter>
+autocmd FileType python inoremap r<Enter><Enter> <Esc>:w<Enter><Esc>:!clear;python %<Enter>
 
 "Comment python code
 autocmd FileType python inoremap ## <Esc>0i#<Esc>j 
@@ -54,4 +54,4 @@ autocmd FileType python inoremap (( (
 
 " Generate statements
 autocmd FileType python inoremap ;p print(i)<Enter><++><Esc>k3lxi
-autocmd FileType python inoremap ;i * = input('<++>')<Esc>F*xi
+autocmd FileType python inoremap ;i * = input('<++>')<Enter><++><Esc>kF*xi
