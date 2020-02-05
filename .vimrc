@@ -53,4 +53,4 @@ autocmd FileType python inoremap '' '
 autocmd FileType python inoremap (( ( 
 
 " Generate statements
-autocmd FileType python inoremap ;p print(i)<Enter><++><Esc>Fixi
+autocmd FileType python inoremap ;p print(i)<Enter><++><Esc>k3lxi
