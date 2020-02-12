@@ -57,7 +57,7 @@ bindsym $mod+Shift+b exec chromium
 bindsym $mod+Ctrl+b exec firefox
 
 
-bindsym $mod+c exec  chromium --app=https://coursera.org
+#bindsym $mod+g exec  $HOME/.config/i3/scripts/browser.sh
 bindsym $mod+Shift+n exec $HOME/test.sh
 
 bindsym $mod+Shift+d exec $HOME/.config/i3/scripts/ytdl.sh
@@ -337,17 +337,17 @@ mode "$mode_system" {
 
 
 
-#Press $mod+Shift+d to Download - check toolbar for next choices
-#bindsym $mod+Shift+d mode "$mode_ytdl"
+#Press $mod+g to browse the internet
+bindsym $mod+g mode "$mode_b"
 
-#set $mode_ytdl Download link as (1) 1080p, (2) 720p, (3) 480p, (4) audio
-#mode "$mode_ytdl" {
-#    bindsym 1 exec --no-startup-id $HOME/Cloud/Code/Scripts/ytdlcase.sh 1080p, mode "default"
-#    bindsym 2 exec --no-startup-id $HOME/Cloud/Code/Scripts/ytdlcase.sh 720p, mode "default"
-#    bindsym 3 exec --no-startup-id $HOME/Cloud/Code/Scripts/ytdlcase.sh 480p, mode "default"
-#    bindsym 4 exec --no-startup-id $HOME/Cloud/Code/Scripts/ytdlcase.sh audio, mode "default"
-#                                     
+set $mode_b Visit (c) Coursera, (g) Gmail, (y) YouTube, (r) Reddit
+mode "$mode_b" {
+    bindsym c exec --no-startup-id ~/.config/i3/scripts/br.sh Coursera, mode "default"
+    bindsym g exec --no-startup-id ~/.config/i3/scripts/br.sh Gmail, mode "default"
+    bindsym y exec --no-startup-id ~/.config/i3/scripts/br.sh YouTube, mode "default"
+    bindsym r exec --no-startup-id ~/.config/i3/scripts/br.sh Reddit, mode "default"
+                                     
     # back to normal: Enter or Escape
-#    bindsym Return mode "default"
-#    bindsym Escape mode "default"
-#}
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
