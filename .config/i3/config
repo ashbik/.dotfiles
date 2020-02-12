@@ -38,7 +38,7 @@ assign [class="firefox"] $ws8
 assign [instance="coursera.org"] $ws9
 assign [instance="messenger.com"] $ws1
 assign [class="Surf"] $ws1
-
+for_window[class="caprine"] floating enable move absolute position 120 px 400px
 
 
 ########################################################################################################################
