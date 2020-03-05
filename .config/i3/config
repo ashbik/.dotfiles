@@ -14,16 +14,16 @@ new_window pixel 5
 
 exec xset -b
 #exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-exec wal -R
+exec_always --no-startup-id wal -R
 exec_always --no-startup-id xrdb $HOME/.Xresources
-exec_always --no-startup-id $HOME/.config/i3/quiet-toogle-bar.py
+#exec_always --no-startup-id $HOME/.config/i3/quiet-toogle-bar.py
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id mpd
-exec --no-startup-id compton
+#exec --no-startup-id mpd
+#exec --no-startup-id compton
 exec --no-startup-id megasync
 #exec --no-startup-id volumeicon
-exec --no-startup-id picom --config ~/.config/picom.conf
+exec_always --no-startup-id picom --config ~/.config/picom.conf
 exec --no-startup-id redshift -c ~/.config/redshift.conf
 exec --no-startup-id cbatticon -i symbolic
 
@@ -35,11 +35,13 @@ exec --no-startup-id cbatticon -i symbolic
 assign [class="Vivaldi-stable"] $ws6
 assign [class="code-oss"] $ws7
 assign [class="firefox"] $ws8
+assign [class="Qbittorrent"] $ws8
 assign [instance="coursera.org"] $ws9
 assign [instance="messenger.com"] $ws1
 assign [class="Surf"] $ws1
 for_window[class="Caprine"] floating enable move absolute position 120 px 120px
-
+assign [instance="youtube-s"] $ws10
+for_window[instance="youtube-s"] floating enable move absolute position 20px 20px
 
 ########################################################################################################################
 ################################################# Shortcut to run apps #################################################
@@ -62,7 +64,7 @@ bindsym $mod+d exec $HOME/.config/i3/scripts/dmenu.sh
 #bindsym $mod+g exec  $HOME/.config/i3/scripts/browser.sh
 bindsym $mod+Shift+n exec $HOME/test.sh
 
-bindsym $mod+Shift+d exec $HOME/.config/i3/scripts/ytdl.sh
+bindsym $mod+Shift+d exec urxvt -name youtube-s -e $HOME/.config/i3/scripts/ytdl.sh foating enable
 bindsym $mod+Ctrl+d exec $HOME/.config/i3/scripts/ytdl-pl.sh
 
 bindsym $mod+f exec st -e ranger
@@ -190,7 +192,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 ""
 
 # switch to workspace
 bindsym $mod+1 workspace  $ws1
