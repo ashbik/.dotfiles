@@ -35,7 +35,7 @@ exec --no-startup-id cbatticon -i symbolic
 assign [class="Vivaldi-stable"] $ws6
 assign [class="code-oss"] $ws7
 assign [class="firefox"] $ws8
-assign [class="Qbittorrent"] $ws8
+assign [class="qBittorrent"] $ws10
 assign [instance="coursera.org"] $ws9
 assign [instance="messenger.com"] $ws1
 assign [class="Surf"] $ws1
@@ -334,6 +334,19 @@ mode "$mode_system" {
 
 
 
+#Press $mod+i for image viewing option
+bindsym $mod+i mode "$mode_i"
+
+set $mode_i View (w) Wallpapers, (g) Gifs, (i) Images
+mode "$mode_i" {
+    bindsym w exec --no-startup-id ~/.config/i3/scripts/img.sh Wallpapers, mode "default"
+    bindsym g exec --no-startup-id ~/.config/i3/scripts/img.sh Gifs, mode "default"
+    bindsym i exec --no-startup-id ~/.config/i3/scripts/img.sh Images, mode "default"
+                                     
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 
 
