@@ -4,8 +4,8 @@ general {
         markup = pango
         interval = 5
         color_good = '#2f343f'
-		color_degraded = '#ebcb8b'
-		color_bad = '#ba5e57'
+	color_degraded = '#ebcb8b'
+	color_bad = '#ba5e57'
 }
 
 order += "load"
@@ -15,15 +15,18 @@ order += "cpu_temperature 0"
 #order += "ethernet enp1s0"
 #order += "wireless wlo1"
 order += "volume master"
-#order += "battery 1"
+order += "battery 0"
 order += "tztime local"
+order += "tztime manila"
+order += "tztime rhodeisland"
+
 
 load {
-        format = "<span background='#f59335'>  %5min Load </span>"
+        format = "<span background='#f59335'>  %5min Load </span>"
 }
 
 cpu_temperature 0 {
-        format = "<span background='#bf616a'>  %degrees °C </span>"
+        format = "<span background='#bf616a'>  %degrees °C </span>"
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
@@ -46,26 +49,40 @@ wireless wlo1 {
 }
 
 volume master {
-        format = "<span background='#ebcb8b'>  %volume </span>"
-        format_muted = "<span background='#ebcb8b'>  Muted </span>"
+        format = "<span background='#ebcb8b'>  %volume </span>"
+        format_muted = "<span background='#ebcb8b'>  Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
 
-battery 1 {
-	last_full_capacity = true
-        format = "<span background='#a3be8c'>  %status %percentage </span>"
-        format_down = "No Battery"
-        status_chr = "Charging"
-        status_bat = "Battery"
-        status_unk = "Unknown"
-        status_full = "Charged"
-        path = "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:19/PNP0C09:01/PNP0C0A:03/power_supply/BAT0/uevent"
+
+battery 0 {
+        format = "<span background='#b48ead'> %status %percentage %remaining %emptytime </span>"
+        format_down = "No battery"
+        status_chr = "⚡"
+        status_bat = ""
+        status_unk = "? UNK"
+        status_full = "☻"
+        path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
 
+
 tztime local {
 		format = "<span background='#81a1c1'> %time </span>"
-		format_time = " %a %-d %b %H:%M"
+		format_time = " %a %-d %b %H:%M"
 }
+
+tztime manila {
+		format = "<span background='#81a1c1'> %time </span>"
+		format_time = "PH:%H:%M"
+		timezone = "Asia/Manila"
+}
+
+tztime rhodeisland {
+		format = "<span background='#81a1c1'> %time </span>"
+		format_time = "US:%H:%M"
+		timezone = "America/New_York"
+}
+
