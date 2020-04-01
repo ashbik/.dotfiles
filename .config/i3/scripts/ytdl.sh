@@ -4,7 +4,7 @@ x="xclip -selection c -o"
 eval $x
 URL=$(eval $x)
 
-DES="$HOME/Videos/%(title)s.%(ext)s"
+DES="$HOME/Videos/YTdl/%(title)s.%(ext)s"
 
 chosenqu=$(echo -e "Best_Quality[video/mp4]\nMid_Quality[video/mp4]\nLowQuality[video/mp4]\naudio" | dmenu -i -p "Select desired format.")
 
