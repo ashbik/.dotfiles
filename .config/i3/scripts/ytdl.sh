@@ -31,9 +31,9 @@ elif [ "$SE" == "audio" ]; then
         youtube-dl -f 140 "$URL" -o "$DES" &&
          notify-send " Download Complete. " "`eval $FN`"
 
-elif [ "$SE" == "Stream" ]; then
-	notify-send " Streaming $URL locally."
-        mpv   --ytdl-format=bestvideo[height=1080]+bestaudio/best --geometry=70%x70%  "$URL" &&
+elif [ "$SE" == "Stream(1080p)" ]; then
+	    notify-send " Streaming $URL locally."
+        mpv --ytdl-format=bestvideo[height=1080]+bestaudio/best --geometry=70%x70%  "$URL" &&
         notify-send "  Streaming Closed."
 else
          notify-send " Process Stopped. " "Could not download the url $URL."
